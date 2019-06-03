@@ -986,6 +986,10 @@ footer .container-fluid:nth-child(2) {
     margin-left: 0px;
   }
 
+  #promise {
+    padding: 0 30px;
+  }
+
   .banner1 .section-title {
     flex-direction: column;
     justify-content: center;
@@ -1051,6 +1055,10 @@ footer .container-fluid:nth-child(2) {
   }
   #services .row .svs-col .flip {
     margin: 0 auto !important;
+  }
+
+  #promise {
+    padding: 0px;
   }
 
   footer .container-fluid {
