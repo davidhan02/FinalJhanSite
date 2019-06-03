@@ -717,6 +717,7 @@ footer .container-fluid:nth-child(2) {
 
 .button1 {
   padding: 20px;
+  border-radius: 0;
 }
 .button1 p {
   font-size: 1.2rem;
