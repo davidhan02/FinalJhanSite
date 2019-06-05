@@ -43,7 +43,7 @@ app.post('/send', function(req, res) {
 
   const mailOptions = {
     from: '"JamesHanCPA Website" <james@jhancpa.com>',
-    to: 'davidhan.5.25@gmail.com',
+    to: 'davidhan.5.25@gmail.com, jhan.cpa@gmail.com',
     subject: 'New message',
     text: 'Text here',
     html: output
