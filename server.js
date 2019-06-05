@@ -43,7 +43,7 @@ app.post('/send', function(req, res) {
 
   const mailOptions = {
     from: '"JamesHanCPA Website" <james@jhancpa.com>',
-    to: 'davidhan.5.25@gmail.com, jhan.cpa@gmail.com',
+    to: 'davidhan.5.25@gmail.com',
     subject: 'New message',
     text: 'Text here',
     html: output
@@ -54,7 +54,7 @@ app.post('/send', function(req, res) {
       return console.log(error);
     }
     console.log('Message sent: %s', info.messageId);
-    res.sendFile(process.cwd() + '/views/index.html');
+    res.redirect('back');
   });
 });
 
