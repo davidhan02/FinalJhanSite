@@ -1,0 +1,149 @@
+#about,
+#contact {
+  @include white-bg;
+
+  // INFO COLUMNS
+  .info {
+    margin-top: 75px;
+  }
+  // COLUMN 1
+  .info:nth-child(1) {
+    padding: 40px 60px 40px 0px;
+    text-align: right;
+
+    h3 {
+      color: #3f75bf;
+      font-family: Lora;
+      font-size: 3rem;
+      font-weight: 400;
+      margin: 0;
+    }
+    hr {
+      max-width: 300px;
+    }
+  } // COLUMN 2
+  .info:nth-child(2) {
+    padding: 0;
+
+    // ACCORDION
+    .accordion {
+      margin: 0 auto;
+      max-width: 600px;
+      // CARDS
+      .card {
+        border: none;
+        box-shadow: none;
+        overflow: visible;
+        .card-header {
+          border: none;
+          background: transparent;
+          padding: 0px;
+          margin-bottom: 2px;
+        }
+        .card-body {
+          p {
+            text-align: justify;
+            letter-spacing: 0px;
+          }
+        }
+      }
+      .card + .card {
+        .card-header {
+          padding-top: 20px;
+        }
+      }
+    }
+  } // COLUMN 3
+  .info:nth-child(3) {
+    padding: 30px 0px 0px 60px;
+    ul {
+      width: 260px;
+    }
+    // ICONS / TEXT
+    li + li {
+      padding-top: 20px;
+    }
+    .intro-icon {
+      color: #3f75bf;
+      float: left;
+      padding-right: 10px;
+      font-size: 3.7rem;
+    }
+    .icon-title {
+      font-family: Lora;
+      font-size: 1.4em;
+      font-weight: 400;
+      line-height: -5px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  #about,
+  #contact {
+    .info {
+      margin-top: 75px;
+    }
+    .info:nth-child(1) {
+      padding: 0px !important;
+      text-align: center;
+
+      h3 {
+        font-size: 2.2rem;
+        padding: 0 20px;
+      }
+    }
+    .info:nth-child(3) {
+      margin-top: 55px;
+      padding: 0px !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: row wrap;
+      ul {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        li {
+          display: inline-block;
+          width: 280px;
+          padding: 0px;
+          padding-left: 20px;
+          margin: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  #about,
+  #contact {
+    .info {
+      margin-top: 65px;
+    }
+    .info:nth-child(1) {
+      h3 {
+        font-size: 1.7rem;
+        padding: 0px;
+      }
+    }
+    .info:nth-child(2) {
+      .button2 {
+        h4 {
+          font-size: 1.3rem;
+        }
+      }
+    }
+    .info:nth-child(3) {
+      margin-top: 50px;
+      ul {
+        li {
+          padding-left: 0px;
+        }
+      }
+    }
+  }
+}

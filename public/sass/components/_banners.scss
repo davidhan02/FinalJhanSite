@@ -1,0 +1,37 @@
+.banner1 {
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  .container-fluid {
+    padding: 0 10px;
+  }
+  .section-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      font-family: Lora;
+      font-weight: 400;
+      margin: 0px;
+    }
+    p {
+      color: white;
+      font-weight: 400;
+    }
+  }
+}
+
+// SHIFT TO MEDIUM
+@media (max-width: 991px) {
+  .banner1 {
+    .section-title {
+      flex-direction: column;
+      justify-content: center;
+
+      h2 {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

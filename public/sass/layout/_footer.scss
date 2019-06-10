@@ -1,0 +1,50 @@
+footer {
+  background: #759ed8;
+  color: #fff;
+  @include true-center;
+
+  .container-fluid {
+    padding: 0 10px;
+    margin: 40px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .footer-col {
+      @include true-center;
+      flex-direction: column;
+
+      .footer-icon {
+        color: #fff;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .container-fluid:nth-child(2) {
+    margin: 0px;
+    padding: 15px;
+    max-width: 100%;
+    background: #3f75bf;
+    color: #fff;
+    justify-content: center;
+  }
+}
+
+// SHIFT TO MEDIUM
+@media (max-width: 991px) {
+  footer {
+    .container-fluid {
+      justify-content: space-around;
+    }
+  }
+}
+
+// SHIFT TO SMALL
+@media (max-width: 575px) {
+  footer {
+    .container-fluid {
+      justify-content: space-between;
+    }
+  }
+}

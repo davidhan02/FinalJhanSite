@@ -1,0 +1,25 @@
+#team {
+  @include white-bg;
+
+  .row {
+    margin-top: 75px;
+
+    .team-col {
+      @include true-center;
+      flex-flow: column wrap;
+      padding: 2%;
+    }
+  }
+}
+
+// SHIFT TO MEDIUM
+@media (max-width: 991px) {
+  #team {
+    .row {
+      margin-top: 55px;
+      .team-col {
+        padding: 20px;
+      }
+    }
+  }
+}

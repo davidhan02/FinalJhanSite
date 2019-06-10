@@ -1,0 +1,62 @@
+#services {
+  @include color-bg;
+
+  .row {
+    margin-top: 60px;
+
+    .svs-col {
+      padding: 10px;
+    }
+    .circle-container {
+      transition: all 0.3s ease;
+      border: 7px solid #6d6c6c;
+      margin-bottom: 20px;
+      width: 150px;
+      height: 150px;
+      background: #fff;
+      color: #6d6c6c;
+
+      .svs-icon {
+        color: #6d6c6c;
+        font-size: 4.75rem;
+      }
+    }
+  }
+}
+
+// SHIFT TO MEDIUM
+@media (max-width: 991px) {
+  #services {
+    .row {
+      margin-top: 35px;
+      .svs-col {
+        padding: 25px;
+      }
+      .svs-col:nth-child(odd) {
+        .flip {
+          margin-right: 0px;
+        }
+      }
+      .svs-col:nth-child(even) {
+        .flip {
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+}
+
+// SHIFT TO SMALL
+@media (max-width: 575px) {
+  #services {
+    .row {
+      margin-top: 40px;
+      .svs-col {
+        padding: 15px;
+        .flip {
+          margin: 0 auto !important;
+        }
+      }
+    }
+  }
+}

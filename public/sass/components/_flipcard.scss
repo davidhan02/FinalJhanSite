@@ -1,0 +1,81 @@
+.flip,
+.flip-side-front,
+.flip-side-back {
+  height: 16rem;
+  width: 100%;
+  max-width: 240px;
+  cursor: pointer;
+}
+.flip {
+  bottom: 0;
+  margin: 0 auto;
+  perspective: 150rem;
+  position: relative;
+  transition: all 0.25s ease;
+
+  .flip-side-front,
+  .flip-side-back {
+    @include true-center;
+    flex-direction: column;
+    text-align: center;
+    transition: all 0.8s ease 0.1s;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    h5 {
+      font-family: Lora;
+      font-weight: 600;
+      color: #000;
+    }
+    h6 {
+      color: #555;
+    }
+    // FIX FOR IE
+    h5,
+    h6,
+    p {
+      max-width: 100%;
+    }
+  }
+  .flip-side-front {
+    transform: rotateY(0deg);
+    .underline1 {
+      width: 0%;
+    }
+  }
+  .flip-side-back {
+    h5 {
+      color: #000;
+    }
+    transform: rotateY(180deg);
+    .underline1 {
+      width: 0%;
+      margin-bottom: 10px;
+    }
+  }
+}
+.flip.active {
+  .flip-side-front {
+    transform: rotateY(-180deg);
+    .underline1 {
+      width: 60%;
+    }
+  }
+  .flip-side-back {
+    transform: rotateY(0deg);
+    .underline1 {
+      width: 60%;
+    }
+  }
+}
+.flip:hover {
+  bottom: 5px;
+  .flip-side-front {
+    .circle-container {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+  }
+}

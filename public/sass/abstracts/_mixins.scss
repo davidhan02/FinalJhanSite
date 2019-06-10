@@ -1,0 +1,21 @@
+@mixin true-center {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin zero-pm {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin white-bg {
+  background: #fff;
+  color: #000;
+}
+
+@mixin color-bg {
+  background: #b6d0f9;
+  color: #000;
+}

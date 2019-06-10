@@ -1,0 +1,204 @@
+nav {
+  @include true-center;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  background: #fff;
+  transition: all 0.5s ease;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+
+  // NAVBAR
+  .nav {
+    display: flex;
+    align-items: center;
+    width: $max-width;
+    height: $nav-height;
+    padding: 0 10px;
+
+    // NAV BRAND
+    &-brand {
+      margin-right: auto;
+
+      h1 {
+        @include zero-pm;
+        font-size: 2rem;
+        color: #000;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      img {
+        filter: contrast(100%);
+        height: $nav-height - 20px;
+        width: auto;
+      }
+    }
+    // NAV BUTTON
+    &-button-wrapper {
+      display: none;
+      padding: 10px;
+      padding-right: 0;
+      background: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    &-button {
+      position: absolute;
+      opacity: 0;
+      width: 35px;
+      height: 26px;
+
+      span {
+        display: block;
+        position: absolute;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: #3d6799;
+        border-radius: 9px;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+      }
+      span:nth-child(1) {
+        top: 0px;
+      }
+      span:nth-child(2),
+      span:nth-child(3) {
+        top: 11px;
+      }
+      span:nth-child(4) {
+        bottom: 0px;
+      }
+    }
+    // ACTIVE BUTTON STYLING
+    &-button.active {
+      span:nth-child(1) {
+        top: 11px;
+        width: 0%;
+        left: 50%;
+      }
+      span:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+      span:nth-child(4) {
+        bottom: 11px;
+        width: 0%;
+        left: 50%;
+      }
+    }
+
+    // NAV LINKS
+    &-list {
+      margin-left: auto;
+
+      ul {
+        @include zero-pm;
+        list-style-type: none;
+      }
+      li {
+        @include zero-pm;
+        margin-left: 10px;
+        display: inline;
+      }
+      a {
+        color: #000;
+        position: relative;
+        text-decoration: none;
+        display: inline-block;
+        padding: 7px 10px;
+        margin: 0;
+        transition: all 0.4s ease;
+      }
+      a:hover,
+      a.current {
+        color: #3d6799;
+      }
+      a:before,
+      a:after {
+        position: absolute;
+        content: '';
+        left: 0px;
+        width: 100%;
+        height: 2px;
+        background: #3d6799;
+        opacity: 0;
+        transition: all 0.4s ease;
+      }
+      a:before {
+        top: 0px;
+        transform: translateY(15px);
+      }
+      a:after {
+        bottom: 0px;
+        transform: translateY(-15px);
+      }
+      a:hover:before,
+      a:hover:after,
+      a.current:before,
+      a.current:after {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  nav {
+    .nav {
+      width: 100%;
+      height: $nav-height - 10px;
+      padding-right: 15px;
+
+      // NAV BRAND
+      &-brand {
+        min-width: 200px;
+        img {
+          height: $nav-height - 25px;
+          width: auto;
+        }
+      }
+      // NAV BUTTON
+      &-button-wrapper {
+        display: block;
+      }
+      &-button {
+        position: relative;
+        opacity: 1;
+      }
+      // NAV LINK LIST
+      &-list {
+        position: absolute;
+        top: $nav-height - 10px;
+        left: 0;
+        width: 100%;
+        height: 0px;
+        overflow: hidden;
+        text-align: center;
+        transition: all 0.8s ease;
+
+        ul {
+          background: white;
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+        }
+        li {
+          display: block;
+          width: 100%;
+          padding-bottom: 10px;
+        }
+        a {
+          font-size: 1.3rem;
+          width: 75%;
+        }
+      }
+      &-list.active {
+        height: 550px;
+      }
+    }
+  }
+}

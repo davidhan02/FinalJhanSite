@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, Arial;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  @include zero-pm;
+}
+
+ul {
+  list-style: none;
+}
+
+main section {
+  @include true-center;
+  flex-direction: column;
+  overflow: hidden;
+}
