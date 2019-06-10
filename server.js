@@ -8,13 +8,6 @@ const nodemailer = require('nodemailer');
 const app = express();
 
 app.use(helmet());
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"]
-    }
-  })
-);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
