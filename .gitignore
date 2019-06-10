@@ -1,2 +1,7 @@
 node_modules
+
 config/dev.js
+
+*.css.map
+*.sass.map
+*.scss.map
