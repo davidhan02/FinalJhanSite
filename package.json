@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "sass": "sass --watch public/style.scss public/style.css",
+    "sass": "sass --watch public/sass/main.scss public/style.css",
     "dev": "concurrently \"npm run server\" \"npm run sass\""
   },
   "author": "David Han",
