@@ -1,10 +1,33 @@
 const path = require('path');
+const helmet = require('helmet');
 const express = require('express');
 const keys = require('./config/keys');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
 const app = express();
+
+app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: [
+        "'self'",
+        'stackpath.bootstrapcdn.com',
+        'cdnjs.cloudflare.com',
+        'use.fontawesome.com',
+        'ajax.googleapis.com'
+      ],
+      styleSrc: [
+        "'self'",
+        'stackpath.bootstrapcdn.com',
+        'cdnjs.cloudflare.com',
+        'fonts.googleapis.com'
+      ]
+    }
+  })
+);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
