@@ -11,20 +11,7 @@ app.use(helmet());
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: [
-        "'self'",
-        'stackpath.bootstrapcdn.com',
-        'cdnjs.cloudflare.com',
-        'use.fontawesome.com',
-        'ajax.googleapis.com'
-      ],
-      styleSrc: [
-        "'self'",
-        'stackpath.bootstrapcdn.com',
-        'cdnjs.cloudflare.com',
-        'fonts.googleapis.com'
-      ]
+      defaultSrc: ["'self'"]
     }
   })
 );
